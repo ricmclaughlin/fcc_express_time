@@ -13,7 +13,7 @@ var timeStamp = {
   "naturalTime": null
 };
 var timeStampRouter = require('./routes/timeStampRoute')(timeStamp);
-
+app.use(express.static(__dirname + '/public'));
 app.use('/', timeStampRouter);
 
 app.listen(PORT, function () {

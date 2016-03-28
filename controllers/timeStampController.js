@@ -1,14 +1,11 @@
 var timeStampController = function (timeStamp) {
   get = function (req, res) {
-
     if (req.params.date) {
       res.status(201);
       res.send(processDates(req.params.date));
-      //res.send(req.params.date.toString());
     }
     else {
-      res.status(400);
-      res.send('a query string is required');
+      res.render('../index.html');
     }
 
     function processDates(dateString) {
